@@ -13,10 +13,11 @@ import { createClient } from 'graphql-ws'
 const authLink = setContext( (_, {headers}) => {
 
 	const token = localStorage.getItem('phonenumbers-user-token')
+	console.log(token)
 	return {
 		headers : {
 			...headers,
-			authorizatoin: token ? `Bearer ${token}` : null,
+			authorization: token ? `Bearer ${token}` : null,
 		}
 	}
 

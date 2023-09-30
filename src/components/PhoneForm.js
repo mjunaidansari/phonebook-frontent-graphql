@@ -11,6 +11,7 @@ const PhoneForm = ({setError}) => {
 	const [changeNumber] = useMutation(EDIT_NUMBER, {
 		refetchQueries: [{query: ALL_PERSONS }],
 		onError: (error) => {
+			console.log(error)
 			const message = error.graphQLErrors[0].message
 			setError(message)
 		}
